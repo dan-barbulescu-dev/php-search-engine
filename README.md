@@ -13,16 +13,11 @@ A PHP search function that searches through an array (usually the result of a da
 
 ```php
 
-$search_database = []; // search database that contains the name of composers
-$search_database[1] = 'Ludwig van Beethoven';
-$search_database[2] = 'Johann Sebastian Bach';
-$search_database[3] = 'Wolfgang Amadeus Mozart';
-$search_database[4] = 'Antonio Vivaldi';
-
-$search_query = 'mozart';
+$search_database = ['Ludwig van Beethoven', 'Johann Sebastian Bach', 'Wolfgang Amadeus Mozart', 'Antonio Vivaldi']; // search database that contains the name of composers
 
 $search_level = 6; // search level is set to 6 out of 6 since the database we are searching through is relatively small
 
+$search_query = 'mozart';
  
 if ($search_query != "") $composers_results = custom_search($search_database, $search_query, $search_level);
 else
