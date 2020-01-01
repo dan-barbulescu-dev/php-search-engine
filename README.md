@@ -12,23 +12,23 @@ A PHP search function that searches through an array (usually the result of a da
 ## Sample usage
 
 ```php
+
+$search_database = []; // search database that contains the name of composers
+$search_database[1] = 'Ludwig van Beethoven';
+$search_database[2] = 'Johann Sebastian Bach';
+$search_database[3] = 'Wolfgang Amadeus Mozart';
+$search_database[4] = 'Antonio Vivaldi';
+
+$search_query = 'mozart';
+
 $search_level = 6; // search level is set to 6 out of 6 since the database we are searching through is relatively small
-$sd_composers_name = null; // search database that contains the name of composers
+
  
-// the pdo functions referenced here (pdo_query, pdo_fetch_array) are explained and available at
-// http://danbarbulescu.com/php-functions-that-simplify-working-with-a-pdo-database-connector/
-$sql_query = "SELECT id_composer, name FROM table_composers";
-$result = pdo_query($sql_query);
-while ($row = pdo_fetch_array($result))
-{
- $sd_composers_name[$row['id_composer']] = $row['name'];
-}
- 
-if ($search_query != "") $composers_results = custom_search($sd_composers_name, $search_query, $search_level);
+if ($search_query != "") $composers_results = custom_search($search_database, $search_query, $search_level);
 else
 {
  $composers_results = null;
- foreach ($sd_composers_name as $id_composer => $name)
+ foreach ($search_database as $id_composer => $name)
  {
   $composers_results[] = $id_composer;
  }
