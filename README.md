@@ -39,7 +39,7 @@ if ($composers_found > 0)
     echo '<ul>';
     foreach ($composers_results as $key => $id_composer)
     {
-     echo '<li><a href="http://www.hdclassicalmusic.com/browse/?by=composer&id_composer='.$id_composer.'">'.$sd_composers_name[$id_composer].'</a></li>';
+     echo '<li><a href="https://www.hdclassicalmusic.com/browse/?by=composer&id_composer='.$id_composer.'">'.$sd_composers_name[$id_composer].'</a></li>';
     }
     echo '</ul>';
 }
